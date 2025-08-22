@@ -12,7 +12,7 @@ public class DataValidator {
     }
     public static boolean validadePages(int pages) {
         if(pages < 0) return false;
-        else if(pages > 3000) return false;
+        else if(pages > 1000) return false;
         else return true;
     }
 }

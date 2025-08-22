@@ -2,6 +2,11 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+#Compiled class files
+*.class
+
+#Build output directories
+out/
 
 ### Eclipse ###
 .apt_generated
