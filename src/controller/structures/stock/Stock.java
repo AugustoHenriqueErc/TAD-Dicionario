@@ -1,10 +1,12 @@
-package stock;
+package controller.structures.stock;
 
-public class Stock<T> {
+import controller.structures.Cell;
+import controller.structures.Dictionary;
+
+public class Stock<T> implements Dictionary<T>{
     Cell<T> top;
     int size;
-    public Stock()
-    {
+    public Stock() {
         top = null;
         size = 0;
     }
@@ -12,17 +14,30 @@ public class Stock<T> {
         if(top == null) return true;
         else return false;
     }
-    public void stack(T value){
+    @Override
+    public void insert(T value){
         Cell<T> cell = new Cell<>(value);
         cell.setNext(top);
         top = cell;
     }
-    public Cell<T> unstack(){
+    @Override
+    public boolean remove(int id){
         Cell<T> aux = top;
-        top = top.getNext();
-        aux.setNext(null);
-        return aux;
+        for(int i = 0; i < id; i++) {
+            top = top.getNext();
+            aux.setNext(null);
+        }
     }
+    @Override
+    public boolean lookUp(int id){
+        Cell<T> aux = top;
+        for(int i = 0; i < id; i++) {
+            top = top.getNext();
+        }
+        if(aux == null) return false;
+        else return true;
+    }
+
     @Override
     public String toString(){
         Cell<T> aux = top;

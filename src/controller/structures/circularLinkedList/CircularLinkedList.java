@@ -1,7 +1,8 @@
 package controller.structures.circularLinkedList;
 
+import controller.structures.Cell;
 import controller.structures.Dictionary;
-import model.Book;
+
 public class CircularLinkedList<T> implements Dictionary<T> {
     private Cell<T> head;
     private Cell<T> tail;
@@ -10,11 +11,12 @@ public class CircularLinkedList<T> implements Dictionary<T> {
         head = null;
         tail = null;
     }
+    private boolean isEmpty(){return head == null;}
 
     @Override
     public void insert(T value) {
         Cell<T> cell = new Cell<T>(value);
-        if (head == null) { // lista vazia
+        if (isEmpty()) { // lista vazia
             head = cell;
             tail = cell;
             tail.setNext(head);
@@ -24,21 +26,17 @@ public class CircularLinkedList<T> implements Dictionary<T> {
             tail.setNext(head);
         }
     }
-
+    //Gambiarra para poder executar lookup baseado em id
     @Override
-    public T lookUp(int id) {
-        if (head == null) return null;
+    public boolean lookUp(int id) {
+        if (isEmpty()) return false;
         Cell<T> aux = head;
-        do {
-            if (aux.getValue().equals(value)) {
-                return aux.getValue();
-            }
-            aux = aux.getNext();
-        } while (aux != head);
-        return false;
+        for(int i = 0; i <= id; i++){aux = aux.getNext();}
+        if(aux == null) return false;
+        else return true;
     }
 
-    // Remover elemento
+    @Override
     public boolean remove(T value) {
         if (head == null) return false;
 

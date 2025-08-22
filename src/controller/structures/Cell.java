@@ -1,6 +1,4 @@
-package controller.structures.circularLinkedList;
-
-import model.Book;
+package controller.structures;
 
 public class Cell<T>{
     T value;
