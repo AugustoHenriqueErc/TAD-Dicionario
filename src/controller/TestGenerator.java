@@ -20,7 +20,7 @@ public class TestGenerator {
     public static void generateBookTests(int amount){
         try {
             CircularLinkedList<Book> bookCircularLinkedList = new CircularLinkedList<>();
-            List<Book> books= Benchmark.generateBooks("/home/augusto-henrique/Documents/estudos/BSI/2025_03/prog_III/tp2/src/resources/books.txt",10000);
+            List<Book> books= Benchmark.generateBooks("./src/resources/books.txt",10000);
             System.out.println("TESTING BENCHMARK LOAD AND LOOKUP FOR BOOK DATATYPE CIRCULARLINKEDLIST DATASTRUCTURE");
             Benchmark<Book> bookBenchmark = new Benchmark<>();
 
