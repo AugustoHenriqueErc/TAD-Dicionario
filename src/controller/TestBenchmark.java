@@ -19,8 +19,8 @@ public class TestBenchmark {
             System.out.println("BENCHMARK TIME FOR INSERT IN 10000 BOOKS: " + bookBenchmark.testInsert(booksCircularLinkedList, books));
             System.out.println("BENCHMARK TIME FOR REMOVE IN 10000 BOOKS: " + bookBenchmark.testRemove(booksCircularLinkedList, books));
 
-            List<Integer> ints= Benchmark.generateIntegers(10000);
-            System.out.println("TESTING BENCHMARK LOAD AND LOOKUP FOR INTEGER DATATYPE");
+            List<Integer> ints = Benchmark.generateIntegers(10000);
+            System.out.println("TESTING BENCHMARK INSERT, LOOKUP AND REMOVE FOR INTEGER DATATYPE");
             Benchmark<Integer> integerBenchmark = new Benchmark<>();
 
             System.out.println("BENCHMARK TIME FOR LOOKUP IN 10000 INTEGERS: " + integerBenchmark.testLookUp(integerCircularLinkedList, ints));

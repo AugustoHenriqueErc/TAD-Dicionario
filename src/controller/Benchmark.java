@@ -62,7 +62,7 @@ public class Benchmark<T> {
     public String testInsert(Dictionary<T> dictionary, List<T> data) {
         long start = System.nanoTime(); //Time in nanoseconds
 
-        System.out.println("STARTING TEST INSERT FOR: " + data.size() + " ELEMENTS");
+        System.out.println("STARTING TEST INSERT");
         long end = System.nanoTime();
         return TimeFormatter.formatElapsedTime(end - start);
     }
@@ -72,7 +72,7 @@ public class Benchmark<T> {
         Dictionary<T> ds = loadCollection(dictionary, data); //Loads the collection before proceed with the lookUp test
         long start = System.nanoTime(); //Time in nanoseconds
 
-        System.out.println("STARTING TEST LOOKUP FOR: " + data.size() + " ELEMENTS");
+        System.out.println("STARTING TEST LOOKUP FOR");
         for (int i = 0; i < data.size(); i++) {ds.lookUp(data.get(i));}
 
         long end = System.nanoTime();
@@ -84,7 +84,7 @@ public class Benchmark<T> {
         Dictionary<T> ds = loadCollection(dictionary, data); //Loads the collection before proceed with the remove test
         long start = System.nanoTime();//Time in nanoseconds
 
-        System.out.println("STARTING TEST REMOVE FOR: " + data.size() + " ELEMENTS");
+        System.out.println("STARTING TEST REMOVE");
         for (int i = 0; i < data.size(); i++) {ds.remove(data.get(i));}
 
         long end = System.nanoTime();
