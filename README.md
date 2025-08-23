@@ -7,6 +7,7 @@ O projeto compara o tempo de execução de operações básicas em múltiplas es
 ---
 
 ## 📂 Estrutura do Projetosrc/
+```
 ├── app/
 │ └── Main.java # Ponto de entrada da aplicação
 ├── model/
@@ -27,7 +28,7 @@ O projeto compara o tempo de execução de operações básicas em múltiplas es
 │ └── circularLinkedList/
 │ ├── CircularLinkedList.java # Implementação usando lista circular
 │ └── TestCircularLinkedList.java # Testes da lista circular
-
+```
 ## 🧩 Classes Principais
 
 - **`Dictionary<T>`**: Interface que define as operações básicas do TAD Dicionário.
