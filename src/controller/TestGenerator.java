@@ -27,7 +27,19 @@ public class TestGenerator {
             System.out.println("BENCHMARK TIME FOR INSERT IN " + amount + " BOOKS: " + bookBenchmark.testInsert(bookCircularLinkedList, books));
             System.out.println("BENCHMARK TIME FOR LOOKUP IN " + amount + " BOOKS: " + bookBenchmark.testLookUp(bookCircularLinkedList, books));
             System.out.println("BENCHMARK TIME FOR REMOVE IN " + amount + " BOOKS: " + bookBenchmark.testRemove(bookCircularLinkedList, books));
+            //TO-DO CRIAR TESTES PARA OUTRAS ESTRUTURAS DE DADOS COMO POR EXEMPLO AVL TREE.
+            //1 - IMPORTAR PACKAGE DA ESTRUTURA DE DADO PARA A PASTA CONTROLLER/STRUCTURES
+            //2 - IMPLEMENTAR A INTERFACE NA ESTRUTURA DE DADO DESEJADA
+            //3 - REPETIR BLOCO DE CÓDIGO PARA GERAR TESTES COM A ESTRUTURA DE DADOS (COPIAR O CÓDIGO DA CIRCULARLINKEDLIST)
+            /*CircularLinkedList<Book> bookCircularLinkedList = new CircularLinkedList<>();
+            List<Book> books= Benchmark.generateBooks("/home/augusto-henrique/Documents/estudos/BSI/2025_03/prog_III/tp2/src/resources/books.txt",10000);
+            System.out.println("TESTING BENCHMARK LOAD AND LOOKUP FOR BOOK DATATYPE CIRCULARLINKEDLIST DATASTRUCTURE");
+            Benchmark<Book> bookBenchmark = new Benchmark<>();
 
+            System.out.println("BENCHMARK TIME FOR INSERT IN " + amount + " BOOKS: " + bookBenchmark.testInsert(bookCircularLinkedList, books));
+            System.out.println("BENCHMARK TIME FOR LOOKUP IN " + amount + " BOOKS: " + bookBenchmark.testLookUp(bookCircularLinkedList, books));
+            System.out.println("BENCHMARK TIME FOR REMOVE IN " + amount + " BOOKS: " + bookBenchmark.testRemove(bookCircularLinkedList, books));
+            */
         }catch (IOException e) {e.printStackTrace();}
     }
 
