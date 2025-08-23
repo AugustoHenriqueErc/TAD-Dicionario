@@ -6,8 +6,7 @@ O projeto compara o tempo de execução de operações básicas em múltiplas es
 
 ---
 
-## 📂 Estrutura do Projeto
-src/
+## 📂 Estrutura do Projetosrc/
 ├── app/
 │ └── Main.java # Ponto de entrada da aplicação
 ├── model/
@@ -27,7 +26,7 @@ src/
 │ │ └── testStock.java # Testes da estrutura Stock
 │ └── circularLinkedList/
 │ ├── CircularLinkedList.java # Implementação usando lista circular
-│ └── TestCircularLinkedList.java # Testes da lista circula
+│ └── TestCircularLinkedList.java # Testes da lista circular
 
 ## 🧩 Classes Principais
 
