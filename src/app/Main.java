@@ -12,7 +12,6 @@ public class Main {
         input = sc.nextLine().trim().toUpperCase();
 
         switch(input) {
-          case  "1" ->
         };
     }
 }

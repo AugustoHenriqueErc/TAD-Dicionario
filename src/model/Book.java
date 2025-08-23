@@ -8,30 +8,30 @@ public class Book {
     private String releaseDate;
     private Integer pages;
     private String title;
+    private static int ID_COUNTER = 1;
 
     public Book (String title, String releaseDate, Integer pages) {
         this.title = title;
+        setId();
         try{
-            if(DataValidator.validateData(releaseDate)) this.releaseDate = releaseDate;
+            if(DataValidator.validateDate(releaseDate)) this.releaseDate = releaseDate;
             else throw new IllegalArgumentException("THE VALUE "+releaseDate+" IS NOT A VALID DATE");
         }catch (IllegalArgumentException e){
             System.err.println("CANNOT CREATE BOOK, INVALID RELEASE DATE");
             e.printStackTrace();
         }
-
-        this.releaseDate = releaseDate;
         try {
-            if(DataValidator.validadePages(pages)) throw new IllegalArgumentException("THE VALUE "+ pages +" IS NOT A VALID PARAMETER FOR PAGES");
-            else this.pages = pages;
+            if(DataValidator.validadePages(pages)) this.pages = pages;
+            else throw new IllegalArgumentException("THE VALUE "+ pages +" IS NOT A VALID PARAMETER FOR PAGES");
         }catch (IllegalArgumentException e){
             e.printStackTrace();
         }
     }
     public Book(){
     }
-
-    public void setId(int id) {
-        this.id = id;
+    private void setId() {
+        this.id = ID_COUNTER;
+        ID_COUNTER++;
     }
 
     public void setTitle(String title) {

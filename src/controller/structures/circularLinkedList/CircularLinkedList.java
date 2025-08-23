@@ -15,72 +15,73 @@ public class CircularLinkedList<T> implements Dictionary<T> {
 
     @Override
     public void insert(T value) {
-        Cell<T> cell = new Cell<T>(value);
+        Cell<T> cell = new Cell<>(value);
         if (isEmpty()) { // lista vazia
             head = cell;
             tail = cell;
             tail.setNext(head);
         } else {
+            tail.setNext(cell);
             cell.setNext(head);
-            head = cell;
-            tail.setNext(head);
+            tail = cell;
         }
     }
-    //Gambiarra para poder executar lookup baseado em id
+
     @Override
-    public boolean lookUp(int id) {
+    public boolean lookUp(T value) {
         if (isEmpty()) return false;
         Cell<T> aux = head;
-        for(int i = 0; i <= id; i++){aux = aux.getNext();}
-        if(aux == null) return false;
-        else return true;
+        do {
+            if (aux.getValue().equals(value)) {
+                return true;
+            }
+            aux = aux.getNext();
+        } while (aux != head);
+        return false;
     }
 
     @Override
     public boolean remove(T value) {
-        if (head == null) return false;
+        if (isEmpty()) return false;
 
-        Cell aux = head;
-        Cell prev = tail;
+        Cell<T> current = head;
+        Cell<T> previous = tail;
 
         do {
-            if (aux.getValue().equals(value)) {
-                if (aux == head) { // remover do início
-                    head = head.getNext();
+            if (current.getValue().equals(value)) {
+                if (current == head) {
+                    if (head == tail) { // only one element
+                        head = null;
+                        tail = null;
+                    } else {
+                        head = head.getNext();
+                        tail.setNext(head);
+                    }
+                } else if (current == tail) {
+                    tail = previous;
                     tail.setNext(head);
-                } else if (aux == tail) { // remover do fim
-                    tail = prev;
-                    tail.setNext(head);
-                } else { // remover no meio
-                    prev.setNext(aux.getNext());
-                }
-                // caso a lista fique vazia
-                if (head == aux && head == tail) {
-                    head = null;
-                    tail = null;
+                } else {
+                    previous.setNext(current.getNext());
                 }
                 return true;
             }
-            prev = aux;
-            aux = aux.getNext();
-        } while (aux != head);
+            previous = current;
+            current = current.getNext();
+        } while (current != head);
 
-        return false;
+        return false; // value not found
     }
 
     // Representação em String
     @Override
     public String toString() {
         if (head == null) return "[]";
-
-        StringBuilder sb = new StringBuilder("[");
-        Cell aux = head;
+        StringBuilder sb = new StringBuilder();
+        Cell<T> aux = head;
         do {
-            sb.append(aux.getValue());
+            sb.append(aux.getValue()).append("\n");
             aux = aux.getNext();
-            if (aux != head) sb.append(", ");
         } while (aux != head);
-        sb.append("]");
         return sb.toString();
     }
 }

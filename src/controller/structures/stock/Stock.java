@@ -3,7 +3,7 @@ package controller.structures.stock;
 import controller.structures.Cell;
 import controller.structures.Dictionary;
 
-public class Stock<T> implements Dictionary<T>{
+public class Stock<T> {
     Cell<T> top;
     int size;
     public Stock() {
@@ -14,21 +14,18 @@ public class Stock<T> implements Dictionary<T>{
         if(top == null) return true;
         else return false;
     }
-    @Override
     public void insert(T value){
         Cell<T> cell = new Cell<>(value);
         cell.setNext(top);
         top = cell;
     }
-    @Override
-    public boolean remove(int id){
+    public void remove(int id){
         Cell<T> aux = top;
         for(int i = 0; i < id; i++) {
             top = top.getNext();
             aux.setNext(null);
         }
     }
-    @Override
     public boolean lookUp(int id){
         Cell<T> aux = top;
         for(int i = 0; i < id; i++) {

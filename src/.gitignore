@@ -1,7 +1,7 @@
 ### IntelliJ IDEA ###
 !**/src/main/**/out/
 !**/src/test/**/out/
-.idea/
+../.idea/
 #Compiled class files
 *.class
 
