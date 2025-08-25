@@ -6,7 +6,7 @@ O projeto compara o tempo de execução de operações básicas em múltiplas es
 
 ---
 
-## 📂 Estrutura do Projetosrc/
+## 📂 Estrutura do Projeto
 ```
 ├── app/
 │ └── Main.java # Ponto de entrada da aplicação
@@ -22,7 +22,7 @@ O projeto compara o tempo de execução de operações básicas em múltiplas es
 │ └── structures/
 │ ├── Cell.java # Estrutura de célula para listas encadeadas
 │ ├── Dictionary.java # Interface do TAD Dicionário
-│ ├── stock/
+│ ├── stack/
 │ │ ├── Stock.java # Estrutura de dicionário baseada em "estoque"
 │ │ └── testStock.java # Testes da estrutura Stock
 │ └── circularLinkedList/

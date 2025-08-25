@@ -1,11 +1,11 @@
-package controller.structures.circularLinkedList;
+package model.structures.circularLinkedList;
 
-import controller.structures.Cell;
-import controller.structures.Dictionary;
+import model.structures.Cell;
+import model.structures.Dictionary;
 
-public class CircularLinkedList<T> implements Dictionary<T> {
-    private Cell<T> head;
-    private Cell<T> tail;
+public class CircularLinkedList implements Dictionary {
+    private Cell head;
+    private Cell tail;
 
     public CircularLinkedList() {
         head = null;
@@ -14,8 +14,8 @@ public class CircularLinkedList<T> implements Dictionary<T> {
     private boolean isEmpty(){return head == null;}
 
     @Override
-    public void insert(T value) {
-        Cell<T> cell = new Cell<>(value);
+    public void insert(int value) {
+        Cell cell = new Cell(value);
         if (isEmpty()) { // lista vazia
             head = cell;
             tail = cell;
@@ -28,27 +28,25 @@ public class CircularLinkedList<T> implements Dictionary<T> {
     }
 
     @Override
-    public boolean lookUp(T value) {
+    public boolean lookUp(int value) {
         if (isEmpty()) return false;
-        Cell<T> aux = head;
+        Cell aux = head;
         do {
-            if (aux.getValue().equals(value)) {
-                return true;
-            }
+            if (aux.getValue() == value) {return true;}
             aux = aux.getNext();
         } while (aux != head);
         return false;
     }
 
     @Override
-    public boolean remove(T value) {
+    public boolean remove(int value) {
         if (isEmpty()) return false;
 
-        Cell<T> current = head;
-        Cell<T> previous = tail;
+        Cell current = head;
+        Cell previous = tail;
 
         do {
-            if (current.getValue().equals(value)) {
+            if (current.getValue() == value) {
                 if (current == head) {
                     if (head == tail) { // only one element
                         head = null;
@@ -76,8 +74,8 @@ public class CircularLinkedList<T> implements Dictionary<T> {
     @Override
     public String toString() {
         if (head == null) return "[]";
-        StringBuilder sb = new StringBuilder();
-        Cell<T> aux = head;
+        StringBuilder sb = new StringBuilder("\n");
+        Cell aux = head;
         do {
             sb.append(aux.getValue()).append("\n");
             aux = aux.getNext();

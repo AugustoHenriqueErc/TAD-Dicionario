@@ -14,6 +14,7 @@ public class Main {
             System.out.println("CASO QUEIRA SAIR DIGITE 3");
             input = sc.nextLine().trim().toUpperCase();
             String[] s = input.split(",");
+            if(s.length != 2) main(null);
             switch(s[0]) {
                 case "1" -> TestGenerator.generateBookTests(Integer.parseInt(s[1].trim()));
                 case "2" -> TestGenerator.generateIntegerTests(Integer.parseInt(s[1].trim()));

@@ -1,47 +1,24 @@
 package controller;
 
-import controller.structures.circularLinkedList.CircularLinkedList;
-import model.Book;
+import model.structures.circularLinkedList.CircularLinkedList;
+import model.structures.tree.BinaryTree;
 
-import java.io.IOException;
 import java.util.List;
 
 public class TestGenerator {
-    public static void generateIntegerTests(int amount) {
-        CircularLinkedList<Integer> integerCircularLinkedList = new CircularLinkedList<>();
+    public static void generateTests(int amount) {
+        CircularLinkedList circularLinkedList = new CircularLinkedList();
+        BinaryTree tree = new BinaryTree();
         List<Integer> ints = Benchmark.generateIntegers(amount);
-        System.out.println("TESTING BENCHMARK INSERT, LOOKUP AND REMOVE FOR INTEGER DATATYPE USING CIRCULARLINKEDLIST DATASTRUCTURE");
-        Benchmark<Integer> integerBenchmark = new Benchmark<>();
 
-        System.out.println("BENCHMARK TIME FOR INSERT IN " + amount + " INTEGERS: " + integerBenchmark.testInsert(integerCircularLinkedList, ints));
-        System.out.println("BENCHMARK TIME FOR LOOKUP IN " + amount + " INTEGERS: " + integerBenchmark.testLookUp(integerCircularLinkedList, ints));
-        System.out.println("BENCHMARK TIME FOR REMOVE IN " + amount + " INTEGERS: " + integerBenchmark.testRemove(integerCircularLinkedList, ints));
+        System.out.println("TESTING BENCHMARK INSERT, LOOKUP AND REMOVE FOR INTEGER DATATYPE USING CIRCULARLINKEDLIST DATA STRUCTURE");
+        System.out.println("BENCHMARK TIME FOR INSERT IN " + amount + " INTEGERS: " + Benchmark.testInsert(circularLinkedList, ints));
+        System.out.println("BENCHMARK TIME FOR LOOKUP IN " + amount + " INTEGERS: " + Benchmark.testLookUp(circularLinkedList, ints));
+        System.out.println("BENCHMARK TIME FOR REMOVE IN " + amount + " INTEGERS: " + Benchmark.testRemove(circularLinkedList, ints));
+
+        System.out.println("TESTING BENCHMARK INSERT, LOOKUP AND REMOVE FOR INTEGER DATATYPE USING BINARYTREE DATA STRUCTURE");
+        System.out.println("BENCHMARK TIME FOR INSERT IN " + amount + " INTEGERS: " + Benchmark.testInsert(tree, ints));
+        System.out.println("BENCHMARK TIME FOR LOOKUP IN " + amount + " INTEGERS: " + Benchmark.testLookUp(tree, ints));
+        System.out.println("BENCHMARK TIME FOR REMOVE IN " + amount + " INTEGERS: " + Benchmark.testRemove(tree, ints));
     }
-    public static void generateBookTests(int amount){
-        try {
-            CircularLinkedList<Book> bookCircularLinkedList = new CircularLinkedList<>();
-            List<Book> books= Benchmark.generateBooks("./src/resources/books.txt",10000);
-            System.out.println("TESTING BENCHMARK LOAD AND LOOKUP FOR BOOK DATATYPE CIRCULARLINKEDLIST DATASTRUCTURE");
-            Benchmark<Book> bookBenchmark = new Benchmark<>();
-
-            System.out.println("BENCHMARK TIME FOR INSERT IN " + amount + " BOOKS: " + bookBenchmark.testInsert(bookCircularLinkedList, books));
-            System.out.println("BENCHMARK TIME FOR LOOKUP IN " + amount + " BOOKS: " + bookBenchmark.testLookUp(bookCircularLinkedList, books));
-            System.out.println("BENCHMARK TIME FOR REMOVE IN " + amount + " BOOKS: " + bookBenchmark.testRemove(bookCircularLinkedList, books));
-            //TO-DO CRIAR TESTES PARA OUTRAS ESTRUTURAS DE DADOS COMO POR EXEMPLO AVL TREE.
-            //1 - IMPORTAR PACKAGE DA ESTRUTURA DE DADO PARA A PASTA CONTROLLER/STRUCTURES
-            //2 - IMPLEMENTAR A INTERFACE NA ESTRUTURA DE DADO DESEJADA
-            //3 - REPETIR BLOCO DE CÓDIGO PARA GERAR TESTES COM A ESTRUTURA DE DADOS (COPIAR O CÓDIGO DA CIRCULARLINKEDLIST)
-            /*CircularLinkedList<Book> bookCircularLinkedList = new CircularLinkedList<>();
-            List<Book> books= Benchmark.generateBooks("/home/augusto-henrique/Documents/estudos/BSI/2025_03/prog_III/tp2/src/resources/books.txt",10000);
-            System.out.println("TESTING BENCHMARK LOAD AND LOOKUP FOR BOOK DATATYPE CIRCULARLINKEDLIST DATASTRUCTURE");
-            Benchmark<Book> bookBenchmark = new Benchmark<>();
-
-            System.out.println("BENCHMARK TIME FOR INSERT IN " + amount + " BOOKS: " + bookBenchmark.testInsert(bookCircularLinkedList, books));
-            System.out.println("BENCHMARK TIME FOR LOOKUP IN " + amount + " BOOKS: " + bookBenchmark.testLookUp(bookCircularLinkedList, books));
-            System.out.println("BENCHMARK TIME FOR REMOVE IN " + amount + " BOOKS: " + bookBenchmark.testRemove(bookCircularLinkedList, books));
-            */
-        }catch (IOException e) {e.printStackTrace();}
-    }
-
-
 }
