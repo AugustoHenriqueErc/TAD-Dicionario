@@ -41,7 +41,7 @@ O sistema permite:
 │ └── circularLinkedList/
 │   ├── CircularLinkedList.java # Implementação usando lista circular
 │   ├── TestCircularLinkedList.java # Testes da lista circular
-    └── Cell.java # Celula implementada pela lista circular
+│   └── Cell.java # Celula implementada pela lista circular
 │ └── tree/ 
 │   ├── BinaryTree.java # Implementação usando árvore binária
 │   ├── Leaf.java # Nó folha da árvore binária 
