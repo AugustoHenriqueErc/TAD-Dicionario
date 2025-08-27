@@ -56,7 +56,7 @@ O sistema permite:
    git clone <link-do-repo>
 2. Compile o projeto no IntelliJ IDEA ou utilizando o javac
     ```bash
-    javac -d out src/**/*.java
+    javac -d out src/*/*/*.java
 3. Execute a aplicação
     ```bash
-    java -cp out Main
+    src/app/Main.java
