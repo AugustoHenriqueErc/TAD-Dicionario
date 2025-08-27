@@ -59,4 +59,4 @@ O sistema permite:
     javac -d out src/*/*/*.java
 3. Execute a aplicação
     ```bash
-    src/app/Main.java
+    java src/app/Main.java

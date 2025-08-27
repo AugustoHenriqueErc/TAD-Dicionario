@@ -15,17 +15,23 @@ public class TestGenerator {
 
         System.out.println("TESTING BENCHMARK INSERT, LOOKUP AND REMOVE FOR INTEGER DATATYPE USING CIRCULARLINKEDLIST DATA STRUCTURE");
         System.out.println("BENCHMARK TIME FOR INSERT IN " + amount + " INTEGERS: " + Benchmark.testInsert(circularLinkedList, ints));
+        Benchmark.shuffle(ints);
         System.out.println("BENCHMARK TIME FOR LOOKUP IN " + amount + " INTEGERS: " + Benchmark.testLookUp(circularLinkedList, ints));
+        Benchmark.shuffle(ints);
         System.out.println("BENCHMARK TIME FOR REMOVE IN " + amount + " INTEGERS: " + Benchmark.testRemove(circularLinkedList, ints));
 
         System.out.println("TESTING BENCHMARK INSERT, LOOKUP AND REMOVE FOR INTEGER DATATYPE USING BINARYTREE DATA STRUCTURE");
         System.out.println("BENCHMARK TIME FOR INSERT IN " + amount + " INTEGERS: " + Benchmark.testInsert(tree, ints));
+        Benchmark.shuffle(ints);
         System.out.println("BENCHMARK TIME FOR LOOKUP IN " + amount + " INTEGERS: " + Benchmark.testLookUp(tree, ints));
+        Benchmark.shuffle(ints);
         System.out.println("BENCHMARK TIME FOR REMOVE IN " + amount + " INTEGERS: " + Benchmark.testRemove(tree, ints));
 
         System.out.println("TESTING BENCHMARK INSERT, LOOKUP AND REMOVE FOR INTEGER DATATYPE USING AVLTREE DATA STRUCTURE");
         System.out.println("BENCHMARK TIME FOR INSERT IN " + amount + " INTEGERS: " + Benchmark.testInsert(avlTree, ints));
+        Benchmark.shuffle(ints);
         System.out.println("BENCHMARK TIME FOR LOOKUP IN " + amount + " INTEGERS: " + Benchmark.testLookUp(avlTree, ints));
+        Benchmark.shuffle(ints);
         System.out.println("BENCHMARK TIME FOR REMOVE IN " + amount + " INTEGERS: " + Benchmark.testRemove(avlTree, ints));
 
         System.out.println("TESTE FINALIZADO");

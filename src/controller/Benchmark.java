@@ -13,13 +13,9 @@ public class Benchmark {
     }
 
     public static List<Integer> generateIntegers(int amount) {
-        int min = - amount;
-        int max = amount;
-
-        if (amount > (max - min + 1)) {throw new IllegalArgumentException("Amount is larger than the range of unique values available.");}
-
+        
         List<Integer> numbers = new ArrayList<>();
-        for (int i = min; i <= max; i++) {
+        for (int i = 0; i < amount; i++) {
             numbers.add(i);
         }
 
@@ -27,6 +23,7 @@ public class Benchmark {
 
         return new ArrayList<>(numbers.subList(0, amount));
     }
+    public static void shuffle(List<Integer> ints) {Collections.shuffle(ints, new Random());} 
 
 
     private static Dictionary loadCollection(Dictionary dictionary, List<Integer> data) {
