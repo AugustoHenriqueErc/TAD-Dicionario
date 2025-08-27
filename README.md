@@ -27,26 +27,28 @@ O sistema permite:
 - `notes.tp2.xopp` → Anotações do projeto
 - `out/` → Saída de compilação
 
+```
 ├── app/
-│ └── Main.java # Ponto de entrada da aplicação
+│   └── Main.java                  # Ponto de entrada da aplicação
 ├── controller/
-│ ├── Benchmark.java # Executa benchmarks das operações
-│ ├── DataValidator.java # Valida dados de entrada
-│ └── TestGenerator.java # Geração de testes de inserção, busca e remoção 
+│   ├── Benchmark.java              # Executa benchmarks das operações
+│   ├── DataValidator.java          # Valida dados de entrada
+│   └── TestGenerator.java          # Geração de testes de inserção, busca e remoção
 ├── model.structures/
-│ └── avlTree/
-│   ├── AVLTree.java # Implementação usando árvore AVL, arvore balanceada
-│   ├── Node.java # Nó da árvore AVL
-│   └── testAVLTree.java # Teste da árvore AVL 
-│ └── circularLinkedList/
-│   ├── CircularLinkedList.java # Implementação usando lista circular
-│   ├── TestCircularLinkedList.java # Testes da lista circular
-│   └── Cell.java # Celula implementada pela lista circular
-│ └── tree/ 
-│   ├── BinaryTree.java # Implementação usando árvore binária
-│   ├── Leaf.java # Nó folha da árvore binária 
-│   └── testBinaryTree.java # Teste da árvore Binária
-│ └── Dictionary.java # Interface implementada pelas estruturas de dados
+│   ├── avlTree/
+│   │   ├── AVLTree.java            # Implementação usando árvore AVL
+│   │   ├── Node.java               # Nó da árvore AVL
+│   │   └── testAVLTree.java        # Teste da árvore AVL
+│   ├── circularLinkedList/
+│   │   ├── CircularLinkedList.java # Implementação usando lista circular
+│   │   ├── TestCircularLinkedList.java # Testes da lista circular
+│   │   └── Cell.java               # Célula implementada pela lista circular
+│   ├── tree/
+│   │   ├── BinaryTree.java         # Implementação usando árvore binária
+│   │   ├── Leaf.java               # Nó folha da árvore binária
+│   │   └── testBinaryTree.java     # Teste da árvore Binária
+│   └── Dictionary.java             # Interface implementada pelas estruturas de dados
+```
 
 ## ▶️ Como Executar
 1. Clone este repositório
