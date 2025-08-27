@@ -1,6 +1,5 @@
 package model.structures.circularLinkedList;
 
-import model.structures.Cell;
 import model.structures.Dictionary;
 
 public class CircularLinkedList implements Dictionary {

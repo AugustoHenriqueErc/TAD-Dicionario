@@ -15,22 +15,18 @@ public class AVLTree implements Dictionary {
         }
     }
 
-    // Interface: insert
     @Override
     public void insert(int value) {
         root = insert(root, value);
     }
 
-    // Interface: lookup
     @Override
     public boolean lookUp(int value) {
         return dfsSearch(root, value);
     }
 
-    // Interface: remove
     @Override
     public boolean remove(int value) {
-        if (!lookUp(value)) return false; // only remove if present
         root = remove(root, value);
         return true;
     }
@@ -42,7 +38,6 @@ public class AVLTree implements Dictionary {
         return dfsSearch(node.left, key) || dfsSearch(node.right, key);
     }
 
-    // Insertion with balancing
     private Node insert(Node node, int key) {
         if (node == null) return new Node(key);
 
@@ -51,13 +46,12 @@ public class AVLTree implements Dictionary {
         else if (key > node.key)
             node.right = insert(node.right, key);
         else
-            return node; // no duplicates
+            return node;
 
         updateHeight(node);
         return balance(node);
     }
 
-    // Removal with balancing
     private Node remove(Node node, int key) {
         if (node == null) return null;
 
@@ -144,7 +138,6 @@ public class AVLTree implements Dictionary {
         return current;
     }
 
-    // Debug printing
     public void printInOrder() {
         System.out.print("In-order: ");
         printInOrder(root);

@@ -100,7 +100,6 @@ public class BinaryTree implements Dictionary {
 
     @Override
     public boolean remove(int value) {
-        if (!this.lookUp(value)) {return false;}
 
         BinaryTree result = removeNode(this, value);
 

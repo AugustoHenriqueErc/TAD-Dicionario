@@ -1,4 +1,4 @@
-package model.structures;
+package model.structures.circularLinkedList;
 
 public class Cell{
     int value;
