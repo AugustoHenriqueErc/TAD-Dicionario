@@ -1,26 +1,26 @@
 # TP2 - Estruturas de Dados
 
-## 📌 Objetivo
+## Objetivo
 Este projeto faz parte da disciplina **Programação III (2025.1)** e tem como objetivo comparar o desempenho de diferentes implementações do **TAD Dicionário**, medindo o tempo de execução das operações fundamentais:
 
 - Inserção de chave-valor
 - Consulta por chave
 - Remoção de chave
 
-## 🛠️ Estruturas de Dados Implementadas
+## Estruturas de Dados Implementadas
 O TAD Dicionário foi implementado utilizando diferentes estruturas de dados, a fim de analisar vantagens e desvantagens de cada abordagem:
 
 - **Lista Duplamente Encadeada Circular**
 - **Árvore Binária**
 - **Árvore AVL**
 
-## ⚙️ Funcionalidades
+## Funcionalidades
 O sistema permite:
 - Realizar testes de inserção, busca e remoção de N elementos dentro das estruturas de dados.
 - Medir o tempo de execução de cada operação em diferentes estruturas.
 - Comparar os resultados de desempenho.
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 - `src/` → Código-fonte Java
 - `README.md` → Documentação do projeto
 - `TP2 - Estruturas de Dados.pdf` → Especificação completa do trabalho
@@ -50,7 +50,7 @@ O sistema permite:
 │   └── Dictionary.java             # Interface implementada pelas estruturas de dados
 ```
 
-## ▶️ Como Executar
+## Como Executar
 1. Clone este repositório
    ```bash
    git clone <link-do-repo>
