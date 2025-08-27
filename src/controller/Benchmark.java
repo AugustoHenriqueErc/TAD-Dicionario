@@ -38,7 +38,7 @@ public class Benchmark {
 
         System.out.println("STARTING TEST INSERT");
         long end = System.nanoTime();
-        return TimeFormatter.formatElapsedTime(end - start);
+        return DataValidator.formatElapsedTime(end - start);
     }
 
     //Test the remove time for the desired collection dictionary, using data from the List data
@@ -50,7 +50,7 @@ public class Benchmark {
         for (int i = 0; i < data.size(); i++) {dictionary.lookUp(data.get(i));}
 
         long end = System.nanoTime();
-        return TimeFormatter.formatElapsedTime(end - start);
+        return DataValidator.formatElapsedTime(end - start);
     }
 
     //Test the remove time for the desired collection dictionary, using data from the list
@@ -62,7 +62,7 @@ public class Benchmark {
         for (int i = 0; i < data.size(); i++) {dc.remove(data.get(i));}
 
         long end = System.nanoTime();
-        return TimeFormatter.formatElapsedTime(end - start);
+        return DataValidator.formatElapsedTime(end - start);
     }
 
 

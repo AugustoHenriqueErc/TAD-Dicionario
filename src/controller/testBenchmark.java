@@ -5,7 +5,7 @@ import model.structures.tree.BinaryTree;
 
 import java.util.List;
 
-public class TestBenchmark {
+public class testBenchmark {
     public static void main(String[] args) {
         CircularLinkedList integerCircularLinkedList = new CircularLinkedList();
         BinaryTree tree = new BinaryTree();

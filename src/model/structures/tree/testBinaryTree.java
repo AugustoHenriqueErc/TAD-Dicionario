@@ -1,6 +1,6 @@
 package model.structures.tree;
 
-public class TestBinaryTree {
+public class testBinaryTree {
     
     public static void main(String[] args) {
         System.out.println("=== Teste da Árvore Binária ===\n");

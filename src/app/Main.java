@@ -1,6 +1,8 @@
 package app;
 
+import controller.DataValidator;
 import controller.TestGenerator;
+
 import java.util.Scanner;
 
 public class Main {
@@ -10,17 +12,17 @@ public class Main {
         boolean exit = false;
         System.out.println("BEM VINDO AO DICIONÁRIO TAD");
         while(!exit) {
-            System.out.println("\nPODES REALIZAR OPERAÇÕES PARA MEDIR O CUSTO COMPUTACIONAL DE:\nINSERÇÃO\nREMOÇÃO\nBUSCA\nEM 3 ESTRUTURAS DE DADOS: CIRCULAR LINKED LIST, \nDIGITE PARA QUAL TIPO DE DADOS GOSTARIA DE TESTAR\n[1] BOOKS\n[2] INTEGER\nSEGUIDO DA QUANTIDADE DE DADOS QUE GOSTARIA DE TESTAR\nEXEMPLO: 1, 10000");
-            System.out.println("CASO QUEIRA SAIR DIGITE 3");
+            System.out.println("\nVOCÊ PODE REALIZAR OPERAÇÕES PARA MEDIR O CUSTO COMPUTACIONAL DE:\nINSERÇÃO\nREMOÇÃO\nBUSCA\nEM 3 ESTRUTURAS DE DADOS: CIRCULAR LINKED LIST, BINARY TREE E AVL BINARY TREE\nDIGITE A QUANTIDADE DE DADOS QUE GOSTARIA DE REALIZAR OS TESTES\nRECOMENDO NÃO USAR MAIS DE 10000000 DEVIDO AO TEMPO DE PROCESSAMENTO");
+            System.out.println("CASO QUEIRA SAIR DIGITE SAIR");
             input = sc.nextLine().trim().toUpperCase();
-            String[] s = input.split(",");
-            if(s.length != 2) main(null);
-            switch(s[0]) {
-                case "1" -> TestGenerator.generateBookTests(Integer.parseInt(s[1].trim()));
-                case "2" -> TestGenerator.generateIntegerTests(Integer.parseInt(s[1].trim()));
-                case "3" -> exit = true;
-                default -> System.out.println("NÃO ENTENDI QUAL TESTE DESEJA REALIZAR, POR FAVOR DIGITE NOVAMENTE");
-            };
+            if(DataValidator.validadeInput(input)) TestGenerator.generateTests(Integer.parseInt(input));
+            else if (input.equals("SAIR")) {
+                System.out.println("OBRIGADO POR UTILIZAR O DICIONÁRIO TAD");
+                exit = true;
+            }
+            else{
+                System.out.println("NÃO ENTENDI O QUE DESEJA FAZER, POR FAVOR DIGITE NOVAMENTE");
+            }
         }
 
     }

@@ -1,8 +1,8 @@
 package model.structures.circularLinkedList;
 
-public class TestCircularLinkedList {
+public class testCircularLinkedList {
     public static void main(String[] args) {
-        CircularLinkedList<Book> list = new CircularLinkedList<>();
+        CircularLinkedList list = new CircularLinkedList();
 
         // Fiction Books
         int n1 = 0;
