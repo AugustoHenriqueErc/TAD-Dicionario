@@ -1,7 +1,7 @@
 # TP2 - Estruturas de Dados
 
 ## Objetivo
-Este projeto faz parte da disciplina **Programação III (2025.1)** e tem como objetivo comparar o desempenho de diferentes implementações do **TAD Dicionário**, medindo o tempo de execução das operações fundamentais:
+Este projeto faz parte da disciplina **Programação III (2025.03)** e tem como objetivo comparar o desempenho de diferentes implementações do **TAD Dicionário**, medindo o tempo de execução das operações fundamentais:
 
 - Inserção de chave-valor
 - Consulta por chave
@@ -53,7 +53,7 @@ O sistema permite:
 ## Como Executar
 1. Clone este repositório
    ```bash
-   git clone <link-do-repo>
+   git clone https://github.com/AugustoHenriqueErc/TAD-Dicionario.git
 2. Compile o projeto no IntelliJ IDEA ou utilizando o javac
     ```bash
     javac -d out src/*/*/*.java
