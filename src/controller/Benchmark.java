@@ -32,7 +32,7 @@ public class Benchmark {
     }
     public static String testInsert(Dictionary dictionary, List<Integer> data) {
         long start = System.nanoTime(); //Time in nanoseconds
-
+        loadCollection(dictionary, data);
         System.out.println("STARTING TEST INSERT");
         long end = System.nanoTime();
         return DataValidator.formatElapsedTime(end - start);
@@ -40,7 +40,6 @@ public class Benchmark {
 
     //Test the remove time for the desired collection dictionary, using data from the List data
     public static String testLookUp(Dictionary dictionary, List<Integer> data) {
-        //loadCollection(dictionary, data); //Loads the collection before proceed with the lookUp test
         long start = System.nanoTime(); //Time in nanoseconds
 
         System.out.println("STARTING TEST LOOKUP FOR");
@@ -52,11 +51,10 @@ public class Benchmark {
 
     //Test the remove time for the desired collection dictionary, using data from the list
     public static String testRemove(Dictionary dictionary, List<Integer> data) {
-        Dictionary dc = loadCollection(dictionary, data); //Loads the collection before proceed with the remove test
         long start = System.nanoTime();//Time in nanoseconds
 
         System.out.println("STARTING TEST REMOVE");
-        for (int i = 0; i < data.size(); i++) {dc.remove(data.get(i));}
+        for (int i = 0; i < data.size(); i++) {dictionary.remove(data.get(i));}
 
         long end = System.nanoTime();
         return DataValidator.formatElapsedTime(end - start);
